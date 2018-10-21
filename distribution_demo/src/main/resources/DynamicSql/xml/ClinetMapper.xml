@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oukele.dao.ClinetMapper">
+  <resultMap id="BaseResultMap" type="com.oukele.model.Clinet">
+    <id column="clinet_id" jdbcType="VARCHAR" property="clinetId" />
+    <result column="clinet_name" jdbcType="VARCHAR" property="clinetName" />
+    <result column="clinet_sex" jdbcType="VARCHAR" property="clinetSex" />
+    <result column="clinet_password" jdbcType="VARCHAR" property="clinetPassword" />
+    <result column="clinet_tel" jdbcType="VARCHAR" property="clinetTel" />
+    <result column="clinet_birthdate" jdbcType="TIMESTAMP" property="clinetBirthdate" />
+    <result column="clinet_address" jdbcType="VARCHAR" property="clinetAddress" />
+    <result column="clinet_remarks" jdbcType="VARCHAR" property="clinetRemarks" />
+    <result column="user_group_id" jdbcType="VARCHAR" property="userGroupId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from clinet
+    where clinet_id = #{clinetId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Clinet">
+    insert into clinet (clinet_id, clinet_name, clinet_sex, 
+      clinet_password, clinet_tel, clinet_birthdate, 
+      clinet_address, clinet_remarks, user_group_id
+      )
+    values (#{clinetId,jdbcType=VARCHAR}, #{clinetName,jdbcType=VARCHAR}, #{clinetSex,jdbcType=VARCHAR}, 
+      #{clinetPassword,jdbcType=VARCHAR}, #{clinetTel,jdbcType=VARCHAR}, #{clinetBirthdate,jdbcType=TIMESTAMP}, 
+      #{clinetAddress,jdbcType=VARCHAR}, #{clinetRemarks,jdbcType=VARCHAR}, #{userGroupId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Clinet">
+    update clinet
+    set clinet_name = #{clinetName,jdbcType=VARCHAR},
+      clinet_sex = #{clinetSex,jdbcType=VARCHAR},
+      clinet_password = #{clinetPassword,jdbcType=VARCHAR},
+      clinet_tel = #{clinetTel,jdbcType=VARCHAR},
+      clinet_birthdate = #{clinetBirthdate,jdbcType=TIMESTAMP},
+      clinet_address = #{clinetAddress,jdbcType=VARCHAR},
+      clinet_remarks = #{clinetRemarks,jdbcType=VARCHAR},
+      user_group_id = #{userGroupId,jdbcType=VARCHAR}
+    where clinet_id = #{clinetId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select clinet_id, clinet_name, clinet_sex, clinet_password, clinet_tel, clinet_birthdate, 
+    clinet_address, clinet_remarks, user_group_id
+    from clinet
+    where clinet_id = #{clinetId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select clinet_id, clinet_name, clinet_sex, clinet_password, clinet_tel, clinet_birthdate, 
+    clinet_address, clinet_remarks, user_group_id
+    from clinet
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Clinet">
+    <id column="clinet_id" jdbcType="VARCHAR" property="clinetId" />
+    <result column="clinet_name" jdbcType="VARCHAR" property="clinetName" />
+    <result column="clinet_sex" jdbcType="VARCHAR" property="clinetSex" />
+    <result column="clinet_password" jdbcType="VARCHAR" property="clinetPassword" />
+    <result column="clinet_tel" jdbcType="VARCHAR" property="clinetTel" />
+    <result column="clinet_birthdate" jdbcType="TIMESTAMP" property="clinetBirthdate" />
+    <result column="clinet_address" jdbcType="VARCHAR" property="clinetAddress" />
+    <result column="clinet_remarks" jdbcType="VARCHAR" property="clinetRemarks" />
+    <result column="user_group_id" jdbcType="VARCHAR" property="userGroupId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from clinet
+    where clinet_id = #{clinetId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Clinet">
+    insert into clinet (clinet_id, clinet_name, clinet_sex, 
+      clinet_password, clinet_tel, clinet_birthdate, 
+      clinet_address, clinet_remarks, user_group_id
+      )
+    values (#{clinetId,jdbcType=VARCHAR}, #{clinetName,jdbcType=VARCHAR}, #{clinetSex,jdbcType=VARCHAR}, 
+      #{clinetPassword,jdbcType=VARCHAR}, #{clinetTel,jdbcType=VARCHAR}, #{clinetBirthdate,jdbcType=TIMESTAMP}, 
+      #{clinetAddress,jdbcType=VARCHAR}, #{clinetRemarks,jdbcType=VARCHAR}, #{userGroupId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Clinet">
+    update clinet
+    set clinet_name = #{clinetName,jdbcType=VARCHAR},
+      clinet_sex = #{clinetSex,jdbcType=VARCHAR},
+      clinet_password = #{clinetPassword,jdbcType=VARCHAR},
+      clinet_tel = #{clinetTel,jdbcType=VARCHAR},
+      clinet_birthdate = #{clinetBirthdate,jdbcType=TIMESTAMP},
+      clinet_address = #{clinetAddress,jdbcType=VARCHAR},
+      clinet_remarks = #{clinetRemarks,jdbcType=VARCHAR},
+      user_group_id = #{userGroupId,jdbcType=VARCHAR}
+    where clinet_id = #{clinetId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select clinet_id, clinet_name, clinet_sex, clinet_password, clinet_tel, clinet_birthdate, 
+    clinet_address, clinet_remarks, user_group_id
+    from clinet
+    where clinet_id = #{clinetId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select clinet_id, clinet_name, clinet_sex, clinet_password, clinet_tel, clinet_birthdate, 
+    clinet_address, clinet_remarks, user_group_id
+    from clinet
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Clinet">
+    <id column="clinet_id" jdbcType="VARCHAR" property="clinetId" />
+    <result column="clinet_name" jdbcType="VARCHAR" property="clinetName" />
+    <result column="clinet_sex" jdbcType="VARCHAR" property="clinetSex" />
+    <result column="clinet_password" jdbcType="VARCHAR" property="clinetPassword" />
+    <result column="clinet_tel" jdbcType="VARCHAR" property="clinetTel" />
+    <result column="clinet_birthdate" jdbcType="TIMESTAMP" property="clinetBirthdate" />
+    <result column="clinet_address" jdbcType="VARCHAR" property="clinetAddress" />
+    <result column="clinet_remarks" jdbcType="VARCHAR" property="clinetRemarks" />
+    <result column="user_group_id" jdbcType="VARCHAR" property="userGroupId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from clinet
+    where clinet_id = #{clinetId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Clinet">
+    insert into clinet (clinet_id, clinet_name, clinet_sex, 
+      clinet_password, clinet_tel, clinet_birthdate, 
+      clinet_address, clinet_remarks, user_group_id
+      )
+    values (#{clinetId,jdbcType=VARCHAR}, #{clinetName,jdbcType=VARCHAR}, #{clinetSex,jdbcType=VARCHAR}, 
+      #{clinetPassword,jdbcType=VARCHAR}, #{clinetTel,jdbcType=VARCHAR}, #{clinetBirthdate,jdbcType=TIMESTAMP}, 
+      #{clinetAddress,jdbcType=VARCHAR}, #{clinetRemarks,jdbcType=VARCHAR}, #{userGroupId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Clinet">
+    update clinet
+    set clinet_name = #{clinetName,jdbcType=VARCHAR},
+      clinet_sex = #{clinetSex,jdbcType=VARCHAR},
+      clinet_password = #{clinetPassword,jdbcType=VARCHAR},
+      clinet_tel = #{clinetTel,jdbcType=VARCHAR},
+      clinet_birthdate = #{clinetBirthdate,jdbcType=TIMESTAMP},
+      clinet_address = #{clinetAddress,jdbcType=VARCHAR},
+      clinet_remarks = #{clinetRemarks,jdbcType=VARCHAR},
+      user_group_id = #{userGroupId,jdbcType=VARCHAR}
+    where clinet_id = #{clinetId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select clinet_id, clinet_name, clinet_sex, clinet_password, clinet_tel, clinet_birthdate, 
+    clinet_address, clinet_remarks, user_group_id
+    from clinet
+    where clinet_id = #{clinetId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select clinet_id, clinet_name, clinet_sex, clinet_password, clinet_tel, clinet_birthdate, 
+    clinet_address, clinet_remarks, user_group_id
+    from clinet
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Clinet">
+    <id column="clinet_id" jdbcType="VARCHAR" property="clinetId" />
+    <result column="clinet_name" jdbcType="VARCHAR" property="clinetName" />
+    <result column="clinet_sex" jdbcType="VARCHAR" property="clinetSex" />
+    <result column="clinet_password" jdbcType="VARCHAR" property="clinetPassword" />
+    <result column="clinet_tel" jdbcType="VARCHAR" property="clinetTel" />
+    <result column="clinet_birthdate" jdbcType="TIMESTAMP" property="clinetBirthdate" />
+    <result column="clinet_address" jdbcType="VARCHAR" property="clinetAddress" />
+    <result column="clinet_remarks" jdbcType="VARCHAR" property="clinetRemarks" />
+    <result column="user_group_id" jdbcType="VARCHAR" property="userGroupId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from clinet
+    where clinet_id = #{clinetId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Clinet">
+    insert into clinet (clinet_id, clinet_name, clinet_sex, 
+      clinet_password, clinet_tel, clinet_birthdate, 
+      clinet_address, clinet_remarks, user_group_id
+      )
+    values (#{clinetId,jdbcType=VARCHAR}, #{clinetName,jdbcType=VARCHAR}, #{clinetSex,jdbcType=VARCHAR}, 
+      #{clinetPassword,jdbcType=VARCHAR}, #{clinetTel,jdbcType=VARCHAR}, #{clinetBirthdate,jdbcType=TIMESTAMP}, 
+      #{clinetAddress,jdbcType=VARCHAR}, #{clinetRemarks,jdbcType=VARCHAR}, #{userGroupId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Clinet">
+    update clinet
+    set clinet_name = #{clinetName,jdbcType=VARCHAR},
+      clinet_sex = #{clinetSex,jdbcType=VARCHAR},
+      clinet_password = #{clinetPassword,jdbcType=VARCHAR},
+      clinet_tel = #{clinetTel,jdbcType=VARCHAR},
+      clinet_birthdate = #{clinetBirthdate,jdbcType=TIMESTAMP},
+      clinet_address = #{clinetAddress,jdbcType=VARCHAR},
+      clinet_remarks = #{clinetRemarks,jdbcType=VARCHAR},
+      user_group_id = #{userGroupId,jdbcType=VARCHAR}
+    where clinet_id = #{clinetId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select clinet_id, clinet_name, clinet_sex, clinet_password, clinet_tel, clinet_birthdate, 
+    clinet_address, clinet_remarks, user_group_id
+    from clinet
+    where clinet_id = #{clinetId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select clinet_id, clinet_name, clinet_sex, clinet_password, clinet_tel, clinet_birthdate, 
+    clinet_address, clinet_remarks, user_group_id
+    from clinet
+  </select>
+</mapper>

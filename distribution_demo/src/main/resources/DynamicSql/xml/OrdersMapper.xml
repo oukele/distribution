@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oukele.dao.OrdersMapper">
+  <resultMap id="BaseResultMap" type="com.oukele.model.Orders">
+    <id column="orders_id" jdbcType="VARCHAR" property="ordersId" />
+    <result column="orders_type" jdbcType="INTEGER" property="ordersType" />
+    <result column="orders_goodsname" jdbcType="VARCHAR" property="ordersGoodsname" />
+    <result column="orders_goodsweight" jdbcType="INTEGER" property="ordersGoodsweight" />
+    <result column="orders_mailer" jdbcType="VARCHAR" property="ordersMailer" />
+    <result column="orders_mail_address" jdbcType="VARCHAR" property="ordersMailAddress" />
+    <result column="orders_collect_address" jdbcType="VARCHAR" property="ordersCollectAddress" />
+    <result column="orders_state" jdbcType="INTEGER" property="ordersState" />
+    <result column="orders_mailer_tel" jdbcType="VARCHAR" property="ordersMailerTel" />
+    <result column="orders_collecter" jdbcType="VARCHAR" property="ordersCollecter" />
+    <result column="orders_collerter_tel" jdbcType="VARCHAR" property="ordersCollerterTel" />
+    <result column="orders_start_city" jdbcType="VARCHAR" property="ordersStartCity" />
+    <result column="orders_middle_city" jdbcType="VARCHAR" property="ordersMiddleCity" />
+    <result column="orders_end_city" jdbcType="VARCHAR" property="ordersEndCity" />
+    <result column="orders_carrying_price" jdbcType="DECIMAL" property="ordersCarryingPrice" />
+    <result column="orders_match_price" jdbcType="DECIMAL" property="ordersMatchPrice" />
+    <result column="orders_carryage_price" jdbcType="DECIMAL" property="ordersCarryagePrice" />
+    <result column="orders_total" jdbcType="VARCHAR" property="ordersTotal" />
+    <result column="orders_remarks" jdbcType="VARCHAR" property="ordersRemarks" />
+    <result column="handover_start_city" jdbcType="VARCHAR" property="handoverStartCity" />
+    <result column="cars_id" jdbcType="VARCHAR" property="carsId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from orders
+    where orders_id = #{ordersId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Orders">
+    insert into orders (orders_id, orders_type, orders_goodsname, 
+      orders_goodsweight, orders_mailer, orders_mail_address, 
+      orders_collect_address, orders_state, orders_mailer_tel, 
+      orders_collecter, orders_collerter_tel, orders_start_city, 
+      orders_middle_city, orders_end_city, orders_carrying_price, 
+      orders_match_price, orders_carryage_price, 
+      orders_total, orders_remarks, handover_start_city, 
+      cars_id)
+    values (#{ordersId,jdbcType=VARCHAR}, #{ordersType,jdbcType=INTEGER}, #{ordersGoodsname,jdbcType=VARCHAR}, 
+      #{ordersGoodsweight,jdbcType=INTEGER}, #{ordersMailer,jdbcType=VARCHAR}, #{ordersMailAddress,jdbcType=VARCHAR}, 
+      #{ordersCollectAddress,jdbcType=VARCHAR}, #{ordersState,jdbcType=INTEGER}, #{ordersMailerTel,jdbcType=VARCHAR}, 
+      #{ordersCollecter,jdbcType=VARCHAR}, #{ordersCollerterTel,jdbcType=VARCHAR}, #{ordersStartCity,jdbcType=VARCHAR}, 
+      #{ordersMiddleCity,jdbcType=VARCHAR}, #{ordersEndCity,jdbcType=VARCHAR}, #{ordersCarryingPrice,jdbcType=DECIMAL}, 
+      #{ordersMatchPrice,jdbcType=DECIMAL}, #{ordersCarryagePrice,jdbcType=DECIMAL}, 
+      #{ordersTotal,jdbcType=VARCHAR}, #{ordersRemarks,jdbcType=VARCHAR}, #{handoverStartCity,jdbcType=VARCHAR}, 
+      #{carsId,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Orders">
+    update orders
+    set orders_type = #{ordersType,jdbcType=INTEGER},
+      orders_goodsname = #{ordersGoodsname,jdbcType=VARCHAR},
+      orders_goodsweight = #{ordersGoodsweight,jdbcType=INTEGER},
+      orders_mailer = #{ordersMailer,jdbcType=VARCHAR},
+      orders_mail_address = #{ordersMailAddress,jdbcType=VARCHAR},
+      orders_collect_address = #{ordersCollectAddress,jdbcType=VARCHAR},
+      orders_state = #{ordersState,jdbcType=INTEGER},
+      orders_mailer_tel = #{ordersMailerTel,jdbcType=VARCHAR},
+      orders_collecter = #{ordersCollecter,jdbcType=VARCHAR},
+      orders_collerter_tel = #{ordersCollerterTel,jdbcType=VARCHAR},
+      orders_start_city = #{ordersStartCity,jdbcType=VARCHAR},
+      orders_middle_city = #{ordersMiddleCity,jdbcType=VARCHAR},
+      orders_end_city = #{ordersEndCity,jdbcType=VARCHAR},
+      orders_carrying_price = #{ordersCarryingPrice,jdbcType=DECIMAL},
+      orders_match_price = #{ordersMatchPrice,jdbcType=DECIMAL},
+      orders_carryage_price = #{ordersCarryagePrice,jdbcType=DECIMAL},
+      orders_total = #{ordersTotal,jdbcType=VARCHAR},
+      orders_remarks = #{ordersRemarks,jdbcType=VARCHAR},
+      handover_start_city = #{handoverStartCity,jdbcType=VARCHAR},
+      cars_id = #{carsId,jdbcType=VARCHAR}
+    where orders_id = #{ordersId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select orders_id, orders_type, orders_goodsname, orders_goodsweight, orders_mailer, 
+    orders_mail_address, orders_collect_address, orders_state, orders_mailer_tel, orders_collecter, 
+    orders_collerter_tel, orders_start_city, orders_middle_city, orders_end_city, orders_carrying_price, 
+    orders_match_price, orders_carryage_price, orders_total, orders_remarks, handover_start_city, 
+    cars_id
+    from orders
+    where orders_id = #{ordersId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select orders_id, orders_type, orders_goodsname, orders_goodsweight, orders_mailer, 
+    orders_mail_address, orders_collect_address, orders_state, orders_mailer_tel, orders_collecter, 
+    orders_collerter_tel, orders_start_city, orders_middle_city, orders_end_city, orders_carrying_price, 
+    orders_match_price, orders_carryage_price, orders_total, orders_remarks, handover_start_city, 
+    cars_id
+    from orders
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Orders">
+    <id column="orders_id" jdbcType="VARCHAR" property="ordersId" />
+    <result column="orders_type" jdbcType="INTEGER" property="ordersType" />
+    <result column="orders_goodsname" jdbcType="VARCHAR" property="ordersGoodsname" />
+    <result column="orders_goodsweight" jdbcType="INTEGER" property="ordersGoodsweight" />
+    <result column="orders_mailer" jdbcType="VARCHAR" property="ordersMailer" />
+    <result column="orders_mail_address" jdbcType="VARCHAR" property="ordersMailAddress" />
+    <result column="orders_collect_address" jdbcType="VARCHAR" property="ordersCollectAddress" />
+    <result column="orders_state" jdbcType="INTEGER" property="ordersState" />
+    <result column="orders_mailer_tel" jdbcType="VARCHAR" property="ordersMailerTel" />
+    <result column="orders_collecter" jdbcType="VARCHAR" property="ordersCollecter" />
+    <result column="orders_collerter_tel" jdbcType="VARCHAR" property="ordersCollerterTel" />
+    <result column="orders_start_city" jdbcType="VARCHAR" property="ordersStartCity" />
+    <result column="orders_middle_city" jdbcType="VARCHAR" property="ordersMiddleCity" />
+    <result column="orders_end_city" jdbcType="VARCHAR" property="ordersEndCity" />
+    <result column="orders_carrying_price" jdbcType="DECIMAL" property="ordersCarryingPrice" />
+    <result column="orders_match_price" jdbcType="DECIMAL" property="ordersMatchPrice" />
+    <result column="orders_carryage_price" jdbcType="DECIMAL" property="ordersCarryagePrice" />
+    <result column="orders_total" jdbcType="VARCHAR" property="ordersTotal" />
+    <result column="orders_remarks" jdbcType="VARCHAR" property="ordersRemarks" />
+    <result column="handover_start_city" jdbcType="VARCHAR" property="handoverStartCity" />
+    <result column="cars_id" jdbcType="VARCHAR" property="carsId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from orders
+    where orders_id = #{ordersId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Orders">
+    insert into orders (orders_id, orders_type, orders_goodsname, 
+      orders_goodsweight, orders_mailer, orders_mail_address, 
+      orders_collect_address, orders_state, orders_mailer_tel, 
+      orders_collecter, orders_collerter_tel, orders_start_city, 
+      orders_middle_city, orders_end_city, orders_carrying_price, 
+      orders_match_price, orders_carryage_price, 
+      orders_total, orders_remarks, handover_start_city, 
+      cars_id)
+    values (#{ordersId,jdbcType=VARCHAR}, #{ordersType,jdbcType=INTEGER}, #{ordersGoodsname,jdbcType=VARCHAR}, 
+      #{ordersGoodsweight,jdbcType=INTEGER}, #{ordersMailer,jdbcType=VARCHAR}, #{ordersMailAddress,jdbcType=VARCHAR}, 
+      #{ordersCollectAddress,jdbcType=VARCHAR}, #{ordersState,jdbcType=INTEGER}, #{ordersMailerTel,jdbcType=VARCHAR}, 
+      #{ordersCollecter,jdbcType=VARCHAR}, #{ordersCollerterTel,jdbcType=VARCHAR}, #{ordersStartCity,jdbcType=VARCHAR}, 
+      #{ordersMiddleCity,jdbcType=VARCHAR}, #{ordersEndCity,jdbcType=VARCHAR}, #{ordersCarryingPrice,jdbcType=DECIMAL}, 
+      #{ordersMatchPrice,jdbcType=DECIMAL}, #{ordersCarryagePrice,jdbcType=DECIMAL}, 
+      #{ordersTotal,jdbcType=VARCHAR}, #{ordersRemarks,jdbcType=VARCHAR}, #{handoverStartCity,jdbcType=VARCHAR}, 
+      #{carsId,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Orders">
+    update orders
+    set orders_type = #{ordersType,jdbcType=INTEGER},
+      orders_goodsname = #{ordersGoodsname,jdbcType=VARCHAR},
+      orders_goodsweight = #{ordersGoodsweight,jdbcType=INTEGER},
+      orders_mailer = #{ordersMailer,jdbcType=VARCHAR},
+      orders_mail_address = #{ordersMailAddress,jdbcType=VARCHAR},
+      orders_collect_address = #{ordersCollectAddress,jdbcType=VARCHAR},
+      orders_state = #{ordersState,jdbcType=INTEGER},
+      orders_mailer_tel = #{ordersMailerTel,jdbcType=VARCHAR},
+      orders_collecter = #{ordersCollecter,jdbcType=VARCHAR},
+      orders_collerter_tel = #{ordersCollerterTel,jdbcType=VARCHAR},
+      orders_start_city = #{ordersStartCity,jdbcType=VARCHAR},
+      orders_middle_city = #{ordersMiddleCity,jdbcType=VARCHAR},
+      orders_end_city = #{ordersEndCity,jdbcType=VARCHAR},
+      orders_carrying_price = #{ordersCarryingPrice,jdbcType=DECIMAL},
+      orders_match_price = #{ordersMatchPrice,jdbcType=DECIMAL},
+      orders_carryage_price = #{ordersCarryagePrice,jdbcType=DECIMAL},
+      orders_total = #{ordersTotal,jdbcType=VARCHAR},
+      orders_remarks = #{ordersRemarks,jdbcType=VARCHAR},
+      handover_start_city = #{handoverStartCity,jdbcType=VARCHAR},
+      cars_id = #{carsId,jdbcType=VARCHAR}
+    where orders_id = #{ordersId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select orders_id, orders_type, orders_goodsname, orders_goodsweight, orders_mailer, 
+    orders_mail_address, orders_collect_address, orders_state, orders_mailer_tel, orders_collecter, 
+    orders_collerter_tel, orders_start_city, orders_middle_city, orders_end_city, orders_carrying_price, 
+    orders_match_price, orders_carryage_price, orders_total, orders_remarks, handover_start_city, 
+    cars_id
+    from orders
+    where orders_id = #{ordersId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select orders_id, orders_type, orders_goodsname, orders_goodsweight, orders_mailer, 
+    orders_mail_address, orders_collect_address, orders_state, orders_mailer_tel, orders_collecter, 
+    orders_collerter_tel, orders_start_city, orders_middle_city, orders_end_city, orders_carrying_price, 
+    orders_match_price, orders_carryage_price, orders_total, orders_remarks, handover_start_city, 
+    cars_id
+    from orders
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Orders">
+    <id column="orders_id" jdbcType="VARCHAR" property="ordersId" />
+    <result column="orders_type" jdbcType="INTEGER" property="ordersType" />
+    <result column="orders_goodsname" jdbcType="VARCHAR" property="ordersGoodsname" />
+    <result column="orders_goodsweight" jdbcType="INTEGER" property="ordersGoodsweight" />
+    <result column="orders_mailer" jdbcType="VARCHAR" property="ordersMailer" />
+    <result column="orders_mail_address" jdbcType="VARCHAR" property="ordersMailAddress" />
+    <result column="orders_collect_address" jdbcType="VARCHAR" property="ordersCollectAddress" />
+    <result column="orders_state" jdbcType="INTEGER" property="ordersState" />
+    <result column="orders_mailer_tel" jdbcType="VARCHAR" property="ordersMailerTel" />
+    <result column="orders_collecter" jdbcType="VARCHAR" property="ordersCollecter" />
+    <result column="orders_collerter_tel" jdbcType="VARCHAR" property="ordersCollerterTel" />
+    <result column="orders_start_city" jdbcType="VARCHAR" property="ordersStartCity" />
+    <result column="orders_middle_city" jdbcType="VARCHAR" property="ordersMiddleCity" />
+    <result column="orders_end_city" jdbcType="VARCHAR" property="ordersEndCity" />
+    <result column="orders_carrying_price" jdbcType="DECIMAL" property="ordersCarryingPrice" />
+    <result column="orders_match_price" jdbcType="DECIMAL" property="ordersMatchPrice" />
+    <result column="orders_carryage_price" jdbcType="DECIMAL" property="ordersCarryagePrice" />
+    <result column="orders_total" jdbcType="VARCHAR" property="ordersTotal" />
+    <result column="orders_remarks" jdbcType="VARCHAR" property="ordersRemarks" />
+    <result column="handover_start_city" jdbcType="VARCHAR" property="handoverStartCity" />
+    <result column="cars_id" jdbcType="VARCHAR" property="carsId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from orders
+    where orders_id = #{ordersId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Orders">
+    insert into orders (orders_id, orders_type, orders_goodsname, 
+      orders_goodsweight, orders_mailer, orders_mail_address, 
+      orders_collect_address, orders_state, orders_mailer_tel, 
+      orders_collecter, orders_collerter_tel, orders_start_city, 
+      orders_middle_city, orders_end_city, orders_carrying_price, 
+      orders_match_price, orders_carryage_price, 
+      orders_total, orders_remarks, handover_start_city, 
+      cars_id)
+    values (#{ordersId,jdbcType=VARCHAR}, #{ordersType,jdbcType=INTEGER}, #{ordersGoodsname,jdbcType=VARCHAR}, 
+      #{ordersGoodsweight,jdbcType=INTEGER}, #{ordersMailer,jdbcType=VARCHAR}, #{ordersMailAddress,jdbcType=VARCHAR}, 
+      #{ordersCollectAddress,jdbcType=VARCHAR}, #{ordersState,jdbcType=INTEGER}, #{ordersMailerTel,jdbcType=VARCHAR}, 
+      #{ordersCollecter,jdbcType=VARCHAR}, #{ordersCollerterTel,jdbcType=VARCHAR}, #{ordersStartCity,jdbcType=VARCHAR}, 
+      #{ordersMiddleCity,jdbcType=VARCHAR}, #{ordersEndCity,jdbcType=VARCHAR}, #{ordersCarryingPrice,jdbcType=DECIMAL}, 
+      #{ordersMatchPrice,jdbcType=DECIMAL}, #{ordersCarryagePrice,jdbcType=DECIMAL}, 
+      #{ordersTotal,jdbcType=VARCHAR}, #{ordersRemarks,jdbcType=VARCHAR}, #{handoverStartCity,jdbcType=VARCHAR}, 
+      #{carsId,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Orders">
+    update orders
+    set orders_type = #{ordersType,jdbcType=INTEGER},
+      orders_goodsname = #{ordersGoodsname,jdbcType=VARCHAR},
+      orders_goodsweight = #{ordersGoodsweight,jdbcType=INTEGER},
+      orders_mailer = #{ordersMailer,jdbcType=VARCHAR},
+      orders_mail_address = #{ordersMailAddress,jdbcType=VARCHAR},
+      orders_collect_address = #{ordersCollectAddress,jdbcType=VARCHAR},
+      orders_state = #{ordersState,jdbcType=INTEGER},
+      orders_mailer_tel = #{ordersMailerTel,jdbcType=VARCHAR},
+      orders_collecter = #{ordersCollecter,jdbcType=VARCHAR},
+      orders_collerter_tel = #{ordersCollerterTel,jdbcType=VARCHAR},
+      orders_start_city = #{ordersStartCity,jdbcType=VARCHAR},
+      orders_middle_city = #{ordersMiddleCity,jdbcType=VARCHAR},
+      orders_end_city = #{ordersEndCity,jdbcType=VARCHAR},
+      orders_carrying_price = #{ordersCarryingPrice,jdbcType=DECIMAL},
+      orders_match_price = #{ordersMatchPrice,jdbcType=DECIMAL},
+      orders_carryage_price = #{ordersCarryagePrice,jdbcType=DECIMAL},
+      orders_total = #{ordersTotal,jdbcType=VARCHAR},
+      orders_remarks = #{ordersRemarks,jdbcType=VARCHAR},
+      handover_start_city = #{handoverStartCity,jdbcType=VARCHAR},
+      cars_id = #{carsId,jdbcType=VARCHAR}
+    where orders_id = #{ordersId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select orders_id, orders_type, orders_goodsname, orders_goodsweight, orders_mailer, 
+    orders_mail_address, orders_collect_address, orders_state, orders_mailer_tel, orders_collecter, 
+    orders_collerter_tel, orders_start_city, orders_middle_city, orders_end_city, orders_carrying_price, 
+    orders_match_price, orders_carryage_price, orders_total, orders_remarks, handover_start_city, 
+    cars_id
+    from orders
+    where orders_id = #{ordersId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select orders_id, orders_type, orders_goodsname, orders_goodsweight, orders_mailer, 
+    orders_mail_address, orders_collect_address, orders_state, orders_mailer_tel, orders_collecter, 
+    orders_collerter_tel, orders_start_city, orders_middle_city, orders_end_city, orders_carrying_price, 
+    orders_match_price, orders_carryage_price, orders_total, orders_remarks, handover_start_city, 
+    cars_id
+    from orders
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Orders">
+    <id column="orders_id" jdbcType="VARCHAR" property="ordersId" />
+    <result column="orders_type" jdbcType="INTEGER" property="ordersType" />
+    <result column="orders_goodsname" jdbcType="VARCHAR" property="ordersGoodsname" />
+    <result column="orders_goodsweight" jdbcType="INTEGER" property="ordersGoodsweight" />
+    <result column="orders_mailer" jdbcType="VARCHAR" property="ordersMailer" />
+    <result column="orders_mail_address" jdbcType="VARCHAR" property="ordersMailAddress" />
+    <result column="orders_collect_address" jdbcType="VARCHAR" property="ordersCollectAddress" />
+    <result column="orders_state" jdbcType="INTEGER" property="ordersState" />
+    <result column="orders_mailer_tel" jdbcType="VARCHAR" property="ordersMailerTel" />
+    <result column="orders_collecter" jdbcType="VARCHAR" property="ordersCollecter" />
+    <result column="orders_collerter_tel" jdbcType="VARCHAR" property="ordersCollerterTel" />
+    <result column="orders_start_city" jdbcType="VARCHAR" property="ordersStartCity" />
+    <result column="orders_middle_city" jdbcType="VARCHAR" property="ordersMiddleCity" />
+    <result column="orders_end_city" jdbcType="VARCHAR" property="ordersEndCity" />
+    <result column="orders_carrying_price" jdbcType="DECIMAL" property="ordersCarryingPrice" />
+    <result column="orders_match_price" jdbcType="DECIMAL" property="ordersMatchPrice" />
+    <result column="orders_carryage_price" jdbcType="DECIMAL" property="ordersCarryagePrice" />
+    <result column="orders_total" jdbcType="VARCHAR" property="ordersTotal" />
+    <result column="orders_remarks" jdbcType="VARCHAR" property="ordersRemarks" />
+    <result column="handover_start_city" jdbcType="VARCHAR" property="handoverStartCity" />
+    <result column="cars_id" jdbcType="VARCHAR" property="carsId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from orders
+    where orders_id = #{ordersId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Orders">
+    insert into orders (orders_id, orders_type, orders_goodsname, 
+      orders_goodsweight, orders_mailer, orders_mail_address, 
+      orders_collect_address, orders_state, orders_mailer_tel, 
+      orders_collecter, orders_collerter_tel, orders_start_city, 
+      orders_middle_city, orders_end_city, orders_carrying_price, 
+      orders_match_price, orders_carryage_price, 
+      orders_total, orders_remarks, handover_start_city, 
+      cars_id)
+    values (#{ordersId,jdbcType=VARCHAR}, #{ordersType,jdbcType=INTEGER}, #{ordersGoodsname,jdbcType=VARCHAR}, 
+      #{ordersGoodsweight,jdbcType=INTEGER}, #{ordersMailer,jdbcType=VARCHAR}, #{ordersMailAddress,jdbcType=VARCHAR}, 
+      #{ordersCollectAddress,jdbcType=VARCHAR}, #{ordersState,jdbcType=INTEGER}, #{ordersMailerTel,jdbcType=VARCHAR}, 
+      #{ordersCollecter,jdbcType=VARCHAR}, #{ordersCollerterTel,jdbcType=VARCHAR}, #{ordersStartCity,jdbcType=VARCHAR}, 
+      #{ordersMiddleCity,jdbcType=VARCHAR}, #{ordersEndCity,jdbcType=VARCHAR}, #{ordersCarryingPrice,jdbcType=DECIMAL}, 
+      #{ordersMatchPrice,jdbcType=DECIMAL}, #{ordersCarryagePrice,jdbcType=DECIMAL}, 
+      #{ordersTotal,jdbcType=VARCHAR}, #{ordersRemarks,jdbcType=VARCHAR}, #{handoverStartCity,jdbcType=VARCHAR}, 
+      #{carsId,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Orders">
+    update orders
+    set orders_type = #{ordersType,jdbcType=INTEGER},
+      orders_goodsname = #{ordersGoodsname,jdbcType=VARCHAR},
+      orders_goodsweight = #{ordersGoodsweight,jdbcType=INTEGER},
+      orders_mailer = #{ordersMailer,jdbcType=VARCHAR},
+      orders_mail_address = #{ordersMailAddress,jdbcType=VARCHAR},
+      orders_collect_address = #{ordersCollectAddress,jdbcType=VARCHAR},
+      orders_state = #{ordersState,jdbcType=INTEGER},
+      orders_mailer_tel = #{ordersMailerTel,jdbcType=VARCHAR},
+      orders_collecter = #{ordersCollecter,jdbcType=VARCHAR},
+      orders_collerter_tel = #{ordersCollerterTel,jdbcType=VARCHAR},
+      orders_start_city = #{ordersStartCity,jdbcType=VARCHAR},
+      orders_middle_city = #{ordersMiddleCity,jdbcType=VARCHAR},
+      orders_end_city = #{ordersEndCity,jdbcType=VARCHAR},
+      orders_carrying_price = #{ordersCarryingPrice,jdbcType=DECIMAL},
+      orders_match_price = #{ordersMatchPrice,jdbcType=DECIMAL},
+      orders_carryage_price = #{ordersCarryagePrice,jdbcType=DECIMAL},
+      orders_total = #{ordersTotal,jdbcType=VARCHAR},
+      orders_remarks = #{ordersRemarks,jdbcType=VARCHAR},
+      handover_start_city = #{handoverStartCity,jdbcType=VARCHAR},
+      cars_id = #{carsId,jdbcType=VARCHAR}
+    where orders_id = #{ordersId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select orders_id, orders_type, orders_goodsname, orders_goodsweight, orders_mailer, 
+    orders_mail_address, orders_collect_address, orders_state, orders_mailer_tel, orders_collecter, 
+    orders_collerter_tel, orders_start_city, orders_middle_city, orders_end_city, orders_carrying_price, 
+    orders_match_price, orders_carryage_price, orders_total, orders_remarks, handover_start_city, 
+    cars_id
+    from orders
+    where orders_id = #{ordersId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select orders_id, orders_type, orders_goodsname, orders_goodsweight, orders_mailer, 
+    orders_mail_address, orders_collect_address, orders_state, orders_mailer_tel, orders_collecter, 
+    orders_collerter_tel, orders_start_city, orders_middle_city, orders_end_city, orders_carrying_price, 
+    orders_match_price, orders_carryage_price, orders_total, orders_remarks, handover_start_city, 
+    cars_id
+    from orders
+  </select>
+</mapper>

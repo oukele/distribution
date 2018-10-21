@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oukele.dao.StationMapper">
+  <resultMap id="BaseResultMap" type="com.oukele.model.Station">
+    <id column="station_id" jdbcType="INTEGER" property="stationId" />
+    <result column="station_name" jdbcType="VARCHAR" property="stationName" />
+    <result column="station_tel" jdbcType="VARCHAR" property="stationTel" />
+    <result column="station_address" jdbcType="VARCHAR" property="stationAddress" />
+    <result column="station_remarks" jdbcType="VARCHAR" property="stationRemarks" />
+    <result column="province_id" jdbcType="VARCHAR" property="provinceId" />
+    <result column="city_id" jdbcType="VARCHAR" property="cityId" />
+    <result column="admins_id" jdbcType="VARCHAR" property="adminsId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from station
+    where station_id = #{stationId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Station">
+    insert into station (station_id, station_name, station_tel, 
+      station_address, station_remarks, province_id, 
+      city_id, admins_id)
+    values (#{stationId,jdbcType=INTEGER}, #{stationName,jdbcType=VARCHAR}, #{stationTel,jdbcType=VARCHAR}, 
+      #{stationAddress,jdbcType=VARCHAR}, #{stationRemarks,jdbcType=VARCHAR}, #{provinceId,jdbcType=VARCHAR}, 
+      #{cityId,jdbcType=VARCHAR}, #{adminsId,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Station">
+    update station
+    set station_name = #{stationName,jdbcType=VARCHAR},
+      station_tel = #{stationTel,jdbcType=VARCHAR},
+      station_address = #{stationAddress,jdbcType=VARCHAR},
+      station_remarks = #{stationRemarks,jdbcType=VARCHAR},
+      province_id = #{provinceId,jdbcType=VARCHAR},
+      city_id = #{cityId,jdbcType=VARCHAR},
+      admins_id = #{adminsId,jdbcType=VARCHAR}
+    where station_id = #{stationId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select station_id, station_name, station_tel, station_address, station_remarks, province_id, 
+    city_id, admins_id
+    from station
+    where station_id = #{stationId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select station_id, station_name, station_tel, station_address, station_remarks, province_id, 
+    city_id, admins_id
+    from station
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Station">
+    <id column="station_id" jdbcType="INTEGER" property="stationId" />
+    <result column="station_name" jdbcType="VARCHAR" property="stationName" />
+    <result column="station_tel" jdbcType="VARCHAR" property="stationTel" />
+    <result column="station_address" jdbcType="VARCHAR" property="stationAddress" />
+    <result column="station_remarks" jdbcType="VARCHAR" property="stationRemarks" />
+    <result column="province_id" jdbcType="VARCHAR" property="provinceId" />
+    <result column="city_id" jdbcType="VARCHAR" property="cityId" />
+    <result column="admins_id" jdbcType="VARCHAR" property="adminsId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from station
+    where station_id = #{stationId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Station">
+    insert into station (station_id, station_name, station_tel, 
+      station_address, station_remarks, province_id, 
+      city_id, admins_id)
+    values (#{stationId,jdbcType=INTEGER}, #{stationName,jdbcType=VARCHAR}, #{stationTel,jdbcType=VARCHAR}, 
+      #{stationAddress,jdbcType=VARCHAR}, #{stationRemarks,jdbcType=VARCHAR}, #{provinceId,jdbcType=VARCHAR}, 
+      #{cityId,jdbcType=VARCHAR}, #{adminsId,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Station">
+    update station
+    set station_name = #{stationName,jdbcType=VARCHAR},
+      station_tel = #{stationTel,jdbcType=VARCHAR},
+      station_address = #{stationAddress,jdbcType=VARCHAR},
+      station_remarks = #{stationRemarks,jdbcType=VARCHAR},
+      province_id = #{provinceId,jdbcType=VARCHAR},
+      city_id = #{cityId,jdbcType=VARCHAR},
+      admins_id = #{adminsId,jdbcType=VARCHAR}
+    where station_id = #{stationId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select station_id, station_name, station_tel, station_address, station_remarks, province_id, 
+    city_id, admins_id
+    from station
+    where station_id = #{stationId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select station_id, station_name, station_tel, station_address, station_remarks, province_id, 
+    city_id, admins_id
+    from station
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Station">
+    <id column="station_id" jdbcType="INTEGER" property="stationId" />
+    <result column="station_name" jdbcType="VARCHAR" property="stationName" />
+    <result column="station_tel" jdbcType="VARCHAR" property="stationTel" />
+    <result column="station_address" jdbcType="VARCHAR" property="stationAddress" />
+    <result column="station_remarks" jdbcType="VARCHAR" property="stationRemarks" />
+    <result column="province_id" jdbcType="VARCHAR" property="provinceId" />
+    <result column="city_id" jdbcType="VARCHAR" property="cityId" />
+    <result column="admins_id" jdbcType="VARCHAR" property="adminsId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from station
+    where station_id = #{stationId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Station">
+    insert into station (station_id, station_name, station_tel, 
+      station_address, station_remarks, province_id, 
+      city_id, admins_id)
+    values (#{stationId,jdbcType=INTEGER}, #{stationName,jdbcType=VARCHAR}, #{stationTel,jdbcType=VARCHAR}, 
+      #{stationAddress,jdbcType=VARCHAR}, #{stationRemarks,jdbcType=VARCHAR}, #{provinceId,jdbcType=VARCHAR}, 
+      #{cityId,jdbcType=VARCHAR}, #{adminsId,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Station">
+    update station
+    set station_name = #{stationName,jdbcType=VARCHAR},
+      station_tel = #{stationTel,jdbcType=VARCHAR},
+      station_address = #{stationAddress,jdbcType=VARCHAR},
+      station_remarks = #{stationRemarks,jdbcType=VARCHAR},
+      province_id = #{provinceId,jdbcType=VARCHAR},
+      city_id = #{cityId,jdbcType=VARCHAR},
+      admins_id = #{adminsId,jdbcType=VARCHAR}
+    where station_id = #{stationId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select station_id, station_name, station_tel, station_address, station_remarks, province_id, 
+    city_id, admins_id
+    from station
+    where station_id = #{stationId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select station_id, station_name, station_tel, station_address, station_remarks, province_id, 
+    city_id, admins_id
+    from station
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Station">
+    <id column="station_id" jdbcType="INTEGER" property="stationId" />
+    <result column="station_name" jdbcType="VARCHAR" property="stationName" />
+    <result column="station_tel" jdbcType="VARCHAR" property="stationTel" />
+    <result column="station_address" jdbcType="VARCHAR" property="stationAddress" />
+    <result column="station_remarks" jdbcType="VARCHAR" property="stationRemarks" />
+    <result column="province_id" jdbcType="VARCHAR" property="provinceId" />
+    <result column="city_id" jdbcType="VARCHAR" property="cityId" />
+    <result column="admins_id" jdbcType="VARCHAR" property="adminsId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from station
+    where station_id = #{stationId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Station">
+    insert into station (station_id, station_name, station_tel, 
+      station_address, station_remarks, province_id, 
+      city_id, admins_id)
+    values (#{stationId,jdbcType=INTEGER}, #{stationName,jdbcType=VARCHAR}, #{stationTel,jdbcType=VARCHAR}, 
+      #{stationAddress,jdbcType=VARCHAR}, #{stationRemarks,jdbcType=VARCHAR}, #{provinceId,jdbcType=VARCHAR}, 
+      #{cityId,jdbcType=VARCHAR}, #{adminsId,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Station">
+    update station
+    set station_name = #{stationName,jdbcType=VARCHAR},
+      station_tel = #{stationTel,jdbcType=VARCHAR},
+      station_address = #{stationAddress,jdbcType=VARCHAR},
+      station_remarks = #{stationRemarks,jdbcType=VARCHAR},
+      province_id = #{provinceId,jdbcType=VARCHAR},
+      city_id = #{cityId,jdbcType=VARCHAR},
+      admins_id = #{adminsId,jdbcType=VARCHAR}
+    where station_id = #{stationId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select station_id, station_name, station_tel, station_address, station_remarks, province_id, 
+    city_id, admins_id
+    from station
+    where station_id = #{stationId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select station_id, station_name, station_tel, station_address, station_remarks, province_id, 
+    city_id, admins_id
+    from station
+  </select>
+</mapper>

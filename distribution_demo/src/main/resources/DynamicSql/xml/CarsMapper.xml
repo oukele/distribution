@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oukele.dao.CarsMapper">
+  <resultMap id="BaseResultMap" type="com.oukele.model.Cars">
+    <id column="cars_id" jdbcType="VARCHAR" property="carsId" />
+    <result column="cars_type" jdbcType="VARCHAR" property="carsType" />
+    <result column="cars_production_address" jdbcType="VARCHAR" property="carsProductionAddress" />
+    <result column="cars_production_birthdate" jdbcType="TIMESTAMP" property="carsProductionBirthdate" />
+    <result column="cars_buy_birthdate" jdbcType="TIMESTAMP" property="carsBuyBirthdate" />
+    <result column="cars_remarks" jdbcType="VARCHAR" property="carsRemarks" />
+    <result column="route_id" jdbcType="VARCHAR" property="routeId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from cars
+    where cars_id = #{carsId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Cars">
+    insert into cars (cars_id, cars_type, cars_production_address, 
+      cars_production_birthdate, cars_buy_birthdate, 
+      cars_remarks, route_id)
+    values (#{carsId,jdbcType=VARCHAR}, #{carsType,jdbcType=VARCHAR}, #{carsProductionAddress,jdbcType=VARCHAR}, 
+      #{carsProductionBirthdate,jdbcType=TIMESTAMP}, #{carsBuyBirthdate,jdbcType=TIMESTAMP}, 
+      #{carsRemarks,jdbcType=VARCHAR}, #{routeId,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Cars">
+    update cars
+    set cars_type = #{carsType,jdbcType=VARCHAR},
+      cars_production_address = #{carsProductionAddress,jdbcType=VARCHAR},
+      cars_production_birthdate = #{carsProductionBirthdate,jdbcType=TIMESTAMP},
+      cars_buy_birthdate = #{carsBuyBirthdate,jdbcType=TIMESTAMP},
+      cars_remarks = #{carsRemarks,jdbcType=VARCHAR},
+      route_id = #{routeId,jdbcType=VARCHAR}
+    where cars_id = #{carsId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select cars_id, cars_type, cars_production_address, cars_production_birthdate, cars_buy_birthdate, 
+    cars_remarks, route_id
+    from cars
+    where cars_id = #{carsId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select cars_id, cars_type, cars_production_address, cars_production_birthdate, cars_buy_birthdate, 
+    cars_remarks, route_id
+    from cars
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Cars">
+    <id column="cars_id" jdbcType="VARCHAR" property="carsId" />
+    <result column="cars_type" jdbcType="VARCHAR" property="carsType" />
+    <result column="cars_production_address" jdbcType="VARCHAR" property="carsProductionAddress" />
+    <result column="cars_production_birthdate" jdbcType="TIMESTAMP" property="carsProductionBirthdate" />
+    <result column="cars_buy_birthdate" jdbcType="TIMESTAMP" property="carsBuyBirthdate" />
+    <result column="cars_remarks" jdbcType="VARCHAR" property="carsRemarks" />
+    <result column="route_id" jdbcType="VARCHAR" property="routeId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from cars
+    where cars_id = #{carsId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Cars">
+    insert into cars (cars_id, cars_type, cars_production_address, 
+      cars_production_birthdate, cars_buy_birthdate, 
+      cars_remarks, route_id)
+    values (#{carsId,jdbcType=VARCHAR}, #{carsType,jdbcType=VARCHAR}, #{carsProductionAddress,jdbcType=VARCHAR}, 
+      #{carsProductionBirthdate,jdbcType=TIMESTAMP}, #{carsBuyBirthdate,jdbcType=TIMESTAMP}, 
+      #{carsRemarks,jdbcType=VARCHAR}, #{routeId,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Cars">
+    update cars
+    set cars_type = #{carsType,jdbcType=VARCHAR},
+      cars_production_address = #{carsProductionAddress,jdbcType=VARCHAR},
+      cars_production_birthdate = #{carsProductionBirthdate,jdbcType=TIMESTAMP},
+      cars_buy_birthdate = #{carsBuyBirthdate,jdbcType=TIMESTAMP},
+      cars_remarks = #{carsRemarks,jdbcType=VARCHAR},
+      route_id = #{routeId,jdbcType=VARCHAR}
+    where cars_id = #{carsId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select cars_id, cars_type, cars_production_address, cars_production_birthdate, cars_buy_birthdate, 
+    cars_remarks, route_id
+    from cars
+    where cars_id = #{carsId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select cars_id, cars_type, cars_production_address, cars_production_birthdate, cars_buy_birthdate, 
+    cars_remarks, route_id
+    from cars
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Cars">
+    <id column="cars_id" jdbcType="VARCHAR" property="carsId" />
+    <result column="cars_type" jdbcType="VARCHAR" property="carsType" />
+    <result column="cars_production_address" jdbcType="VARCHAR" property="carsProductionAddress" />
+    <result column="cars_production_birthdate" jdbcType="TIMESTAMP" property="carsProductionBirthdate" />
+    <result column="cars_buy_birthdate" jdbcType="TIMESTAMP" property="carsBuyBirthdate" />
+    <result column="cars_remarks" jdbcType="VARCHAR" property="carsRemarks" />
+    <result column="route_id" jdbcType="VARCHAR" property="routeId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from cars
+    where cars_id = #{carsId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Cars">
+    insert into cars (cars_id, cars_type, cars_production_address, 
+      cars_production_birthdate, cars_buy_birthdate, 
+      cars_remarks, route_id)
+    values (#{carsId,jdbcType=VARCHAR}, #{carsType,jdbcType=VARCHAR}, #{carsProductionAddress,jdbcType=VARCHAR}, 
+      #{carsProductionBirthdate,jdbcType=TIMESTAMP}, #{carsBuyBirthdate,jdbcType=TIMESTAMP}, 
+      #{carsRemarks,jdbcType=VARCHAR}, #{routeId,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Cars">
+    update cars
+    set cars_type = #{carsType,jdbcType=VARCHAR},
+      cars_production_address = #{carsProductionAddress,jdbcType=VARCHAR},
+      cars_production_birthdate = #{carsProductionBirthdate,jdbcType=TIMESTAMP},
+      cars_buy_birthdate = #{carsBuyBirthdate,jdbcType=TIMESTAMP},
+      cars_remarks = #{carsRemarks,jdbcType=VARCHAR},
+      route_id = #{routeId,jdbcType=VARCHAR}
+    where cars_id = #{carsId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select cars_id, cars_type, cars_production_address, cars_production_birthdate, cars_buy_birthdate, 
+    cars_remarks, route_id
+    from cars
+    where cars_id = #{carsId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select cars_id, cars_type, cars_production_address, cars_production_birthdate, cars_buy_birthdate, 
+    cars_remarks, route_id
+    from cars
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Cars">
+    <id column="cars_id" jdbcType="VARCHAR" property="carsId" />
+    <result column="cars_type" jdbcType="VARCHAR" property="carsType" />
+    <result column="cars_production_address" jdbcType="VARCHAR" property="carsProductionAddress" />
+    <result column="cars_production_birthdate" jdbcType="TIMESTAMP" property="carsProductionBirthdate" />
+    <result column="cars_buy_birthdate" jdbcType="TIMESTAMP" property="carsBuyBirthdate" />
+    <result column="cars_remarks" jdbcType="VARCHAR" property="carsRemarks" />
+    <result column="route_id" jdbcType="VARCHAR" property="routeId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from cars
+    where cars_id = #{carsId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Cars">
+    insert into cars (cars_id, cars_type, cars_production_address, 
+      cars_production_birthdate, cars_buy_birthdate, 
+      cars_remarks, route_id)
+    values (#{carsId,jdbcType=VARCHAR}, #{carsType,jdbcType=VARCHAR}, #{carsProductionAddress,jdbcType=VARCHAR}, 
+      #{carsProductionBirthdate,jdbcType=TIMESTAMP}, #{carsBuyBirthdate,jdbcType=TIMESTAMP}, 
+      #{carsRemarks,jdbcType=VARCHAR}, #{routeId,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Cars">
+    update cars
+    set cars_type = #{carsType,jdbcType=VARCHAR},
+      cars_production_address = #{carsProductionAddress,jdbcType=VARCHAR},
+      cars_production_birthdate = #{carsProductionBirthdate,jdbcType=TIMESTAMP},
+      cars_buy_birthdate = #{carsBuyBirthdate,jdbcType=TIMESTAMP},
+      cars_remarks = #{carsRemarks,jdbcType=VARCHAR},
+      route_id = #{routeId,jdbcType=VARCHAR}
+    where cars_id = #{carsId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select cars_id, cars_type, cars_production_address, cars_production_birthdate, cars_buy_birthdate, 
+    cars_remarks, route_id
+    from cars
+    where cars_id = #{carsId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select cars_id, cars_type, cars_production_address, cars_production_birthdate, cars_buy_birthdate, 
+    cars_remarks, route_id
+    from cars
+  </select>
+</mapper>

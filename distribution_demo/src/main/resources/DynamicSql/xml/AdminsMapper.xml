@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oukele.dao.AdminsMapper">
+  <resultMap id="BaseResultMap" type="com.oukele.model.Admins">
+    <id column="admins_id" jdbcType="VARCHAR" property="adminsId" />
+    <result column="admins_name" jdbcType="VARCHAR" property="adminsName" />
+    <result column="admins_sex" jdbcType="INTEGER" property="adminsSex" />
+    <result column="admins_state" jdbcType="INTEGER" property="adminsState" />
+    <result column="admins_city" jdbcType="VARCHAR" property="adminsCity" />
+    <result column="admins_address" jdbcType="VARCHAR" property="adminsAddress" />
+    <result column="admins_password" jdbcType="VARCHAR" property="adminsPassword" />
+    <result column="admins_tel" jdbcType="VARCHAR" property="adminsTel" />
+    <result column="admins_remarks" jdbcType="VARCHAR" property="adminsRemarks" />
+    <result column="client_id" jdbcType="VARCHAR" property="clientId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from admins
+    where admins_id = #{adminsId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Admins">
+    insert into admins (admins_id, admins_name, admins_sex, 
+      admins_state, admins_city, admins_address, 
+      admins_password, admins_tel, admins_remarks, 
+      client_id)
+    values (#{adminsId,jdbcType=VARCHAR}, #{adminsName,jdbcType=VARCHAR}, #{adminsSex,jdbcType=INTEGER}, 
+      #{adminsState,jdbcType=INTEGER}, #{adminsCity,jdbcType=VARCHAR}, #{adminsAddress,jdbcType=VARCHAR}, 
+      #{adminsPassword,jdbcType=VARCHAR}, #{adminsTel,jdbcType=VARCHAR}, #{adminsRemarks,jdbcType=VARCHAR}, 
+      #{clientId,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Admins">
+    update admins
+    set admins_name = #{adminsName,jdbcType=VARCHAR},
+      admins_sex = #{adminsSex,jdbcType=INTEGER},
+      admins_state = #{adminsState,jdbcType=INTEGER},
+      admins_city = #{adminsCity,jdbcType=VARCHAR},
+      admins_address = #{adminsAddress,jdbcType=VARCHAR},
+      admins_password = #{adminsPassword,jdbcType=VARCHAR},
+      admins_tel = #{adminsTel,jdbcType=VARCHAR},
+      admins_remarks = #{adminsRemarks,jdbcType=VARCHAR},
+      client_id = #{clientId,jdbcType=VARCHAR}
+    where admins_id = #{adminsId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select admins_id, admins_name, admins_sex, admins_state, admins_city, admins_address, 
+    admins_password, admins_tel, admins_remarks, client_id
+    from admins
+    where admins_id = #{adminsId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select admins_id, admins_name, admins_sex, admins_state, admins_city, admins_address, 
+    admins_password, admins_tel, admins_remarks, client_id
+    from admins
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Admins">
+    <id column="admins_id" jdbcType="VARCHAR" property="adminsId" />
+    <result column="admins_name" jdbcType="VARCHAR" property="adminsName" />
+    <result column="admins_sex" jdbcType="INTEGER" property="adminsSex" />
+    <result column="admins_state" jdbcType="INTEGER" property="adminsState" />
+    <result column="admins_city" jdbcType="VARCHAR" property="adminsCity" />
+    <result column="admins_address" jdbcType="VARCHAR" property="adminsAddress" />
+    <result column="admins_password" jdbcType="VARCHAR" property="adminsPassword" />
+    <result column="admins_tel" jdbcType="VARCHAR" property="adminsTel" />
+    <result column="admins_remarks" jdbcType="VARCHAR" property="adminsRemarks" />
+    <result column="client_id" jdbcType="VARCHAR" property="clientId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from admins
+    where admins_id = #{adminsId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Admins">
+    insert into admins (admins_id, admins_name, admins_sex, 
+      admins_state, admins_city, admins_address, 
+      admins_password, admins_tel, admins_remarks, 
+      client_id)
+    values (#{adminsId,jdbcType=VARCHAR}, #{adminsName,jdbcType=VARCHAR}, #{adminsSex,jdbcType=INTEGER}, 
+      #{adminsState,jdbcType=INTEGER}, #{adminsCity,jdbcType=VARCHAR}, #{adminsAddress,jdbcType=VARCHAR}, 
+      #{adminsPassword,jdbcType=VARCHAR}, #{adminsTel,jdbcType=VARCHAR}, #{adminsRemarks,jdbcType=VARCHAR}, 
+      #{clientId,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Admins">
+    update admins
+    set admins_name = #{adminsName,jdbcType=VARCHAR},
+      admins_sex = #{adminsSex,jdbcType=INTEGER},
+      admins_state = #{adminsState,jdbcType=INTEGER},
+      admins_city = #{adminsCity,jdbcType=VARCHAR},
+      admins_address = #{adminsAddress,jdbcType=VARCHAR},
+      admins_password = #{adminsPassword,jdbcType=VARCHAR},
+      admins_tel = #{adminsTel,jdbcType=VARCHAR},
+      admins_remarks = #{adminsRemarks,jdbcType=VARCHAR},
+      client_id = #{clientId,jdbcType=VARCHAR}
+    where admins_id = #{adminsId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select admins_id, admins_name, admins_sex, admins_state, admins_city, admins_address, 
+    admins_password, admins_tel, admins_remarks, client_id
+    from admins
+    where admins_id = #{adminsId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select admins_id, admins_name, admins_sex, admins_state, admins_city, admins_address, 
+    admins_password, admins_tel, admins_remarks, client_id
+    from admins
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Admins">
+    <id column="admins_id" jdbcType="VARCHAR" property="adminsId" />
+    <result column="admins_name" jdbcType="VARCHAR" property="adminsName" />
+    <result column="admins_sex" jdbcType="INTEGER" property="adminsSex" />
+    <result column="admins_state" jdbcType="INTEGER" property="adminsState" />
+    <result column="admins_city" jdbcType="VARCHAR" property="adminsCity" />
+    <result column="admins_address" jdbcType="VARCHAR" property="adminsAddress" />
+    <result column="admins_password" jdbcType="VARCHAR" property="adminsPassword" />
+    <result column="admins_tel" jdbcType="VARCHAR" property="adminsTel" />
+    <result column="admins_remarks" jdbcType="VARCHAR" property="adminsRemarks" />
+    <result column="client_id" jdbcType="VARCHAR" property="clientId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from admins
+    where admins_id = #{adminsId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Admins">
+    insert into admins (admins_id, admins_name, admins_sex, 
+      admins_state, admins_city, admins_address, 
+      admins_password, admins_tel, admins_remarks, 
+      client_id)
+    values (#{adminsId,jdbcType=VARCHAR}, #{adminsName,jdbcType=VARCHAR}, #{adminsSex,jdbcType=INTEGER}, 
+      #{adminsState,jdbcType=INTEGER}, #{adminsCity,jdbcType=VARCHAR}, #{adminsAddress,jdbcType=VARCHAR}, 
+      #{adminsPassword,jdbcType=VARCHAR}, #{adminsTel,jdbcType=VARCHAR}, #{adminsRemarks,jdbcType=VARCHAR}, 
+      #{clientId,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Admins">
+    update admins
+    set admins_name = #{adminsName,jdbcType=VARCHAR},
+      admins_sex = #{adminsSex,jdbcType=INTEGER},
+      admins_state = #{adminsState,jdbcType=INTEGER},
+      admins_city = #{adminsCity,jdbcType=VARCHAR},
+      admins_address = #{adminsAddress,jdbcType=VARCHAR},
+      admins_password = #{adminsPassword,jdbcType=VARCHAR},
+      admins_tel = #{adminsTel,jdbcType=VARCHAR},
+      admins_remarks = #{adminsRemarks,jdbcType=VARCHAR},
+      client_id = #{clientId,jdbcType=VARCHAR}
+    where admins_id = #{adminsId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select admins_id, admins_name, admins_sex, admins_state, admins_city, admins_address, 
+    admins_password, admins_tel, admins_remarks, client_id
+    from admins
+    where admins_id = #{adminsId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select admins_id, admins_name, admins_sex, admins_state, admins_city, admins_address, 
+    admins_password, admins_tel, admins_remarks, client_id
+    from admins
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Admins">
+    <id column="admins_id" jdbcType="VARCHAR" property="adminsId" />
+    <result column="admins_name" jdbcType="VARCHAR" property="adminsName" />
+    <result column="admins_sex" jdbcType="INTEGER" property="adminsSex" />
+    <result column="admins_state" jdbcType="INTEGER" property="adminsState" />
+    <result column="admins_city" jdbcType="VARCHAR" property="adminsCity" />
+    <result column="admins_address" jdbcType="VARCHAR" property="adminsAddress" />
+    <result column="admins_password" jdbcType="VARCHAR" property="adminsPassword" />
+    <result column="admins_tel" jdbcType="VARCHAR" property="adminsTel" />
+    <result column="admins_remarks" jdbcType="VARCHAR" property="adminsRemarks" />
+    <result column="client_id" jdbcType="VARCHAR" property="clientId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from admins
+    where admins_id = #{adminsId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Admins">
+    insert into admins (admins_id, admins_name, admins_sex, 
+      admins_state, admins_city, admins_address, 
+      admins_password, admins_tel, admins_remarks, 
+      client_id)
+    values (#{adminsId,jdbcType=VARCHAR}, #{adminsName,jdbcType=VARCHAR}, #{adminsSex,jdbcType=INTEGER}, 
+      #{adminsState,jdbcType=INTEGER}, #{adminsCity,jdbcType=VARCHAR}, #{adminsAddress,jdbcType=VARCHAR}, 
+      #{adminsPassword,jdbcType=VARCHAR}, #{adminsTel,jdbcType=VARCHAR}, #{adminsRemarks,jdbcType=VARCHAR}, 
+      #{clientId,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Admins">
+    update admins
+    set admins_name = #{adminsName,jdbcType=VARCHAR},
+      admins_sex = #{adminsSex,jdbcType=INTEGER},
+      admins_state = #{adminsState,jdbcType=INTEGER},
+      admins_city = #{adminsCity,jdbcType=VARCHAR},
+      admins_address = #{adminsAddress,jdbcType=VARCHAR},
+      admins_password = #{adminsPassword,jdbcType=VARCHAR},
+      admins_tel = #{adminsTel,jdbcType=VARCHAR},
+      admins_remarks = #{adminsRemarks,jdbcType=VARCHAR},
+      client_id = #{clientId,jdbcType=VARCHAR}
+    where admins_id = #{adminsId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select admins_id, admins_name, admins_sex, admins_state, admins_city, admins_address, 
+    admins_password, admins_tel, admins_remarks, client_id
+    from admins
+    where admins_id = #{adminsId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select admins_id, admins_name, admins_sex, admins_state, admins_city, admins_address, 
+    admins_password, admins_tel, admins_remarks, client_id
+    from admins
+  </select>
+</mapper>

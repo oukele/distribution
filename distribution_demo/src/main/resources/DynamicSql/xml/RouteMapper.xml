@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oukele.dao.RouteMapper">
+  <resultMap id="BaseResultMap" type="com.oukele.model.Route">
+    <id column="route_id" jdbcType="VARCHAR" property="routeId" />
+    <result column="route_name" jdbcType="VARCHAR" property="routeName" />
+    <result column="route_carryage_price" jdbcType="DECIMAL" property="routeCarryagePrice" />
+    <result column="route_start_province" jdbcType="VARCHAR" property="routeStartProvince" />
+    <result column="route_start_city" jdbcType="VARCHAR" property="routeStartCity" />
+    <result column="route_middle_proince" jdbcType="VARCHAR" property="routeMiddleProince" />
+    <result column="route_middle_city" jdbcType="VARCHAR" property="routeMiddleCity" />
+    <result column="route_end_province" jdbcType="VARCHAR" property="routeEndProvince" />
+    <result column="route_end_city" jdbcType="VARCHAR" property="routeEndCity" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from route
+    where route_id = #{routeId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Route">
+    insert into route (route_id, route_name, route_carryage_price, 
+      route_start_province, route_start_city, route_middle_proince, 
+      route_middle_city, route_end_province, route_end_city
+      )
+    values (#{routeId,jdbcType=VARCHAR}, #{routeName,jdbcType=VARCHAR}, #{routeCarryagePrice,jdbcType=DECIMAL}, 
+      #{routeStartProvince,jdbcType=VARCHAR}, #{routeStartCity,jdbcType=VARCHAR}, #{routeMiddleProince,jdbcType=VARCHAR}, 
+      #{routeMiddleCity,jdbcType=VARCHAR}, #{routeEndProvince,jdbcType=VARCHAR}, #{routeEndCity,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Route">
+    update route
+    set route_name = #{routeName,jdbcType=VARCHAR},
+      route_carryage_price = #{routeCarryagePrice,jdbcType=DECIMAL},
+      route_start_province = #{routeStartProvince,jdbcType=VARCHAR},
+      route_start_city = #{routeStartCity,jdbcType=VARCHAR},
+      route_middle_proince = #{routeMiddleProince,jdbcType=VARCHAR},
+      route_middle_city = #{routeMiddleCity,jdbcType=VARCHAR},
+      route_end_province = #{routeEndProvince,jdbcType=VARCHAR},
+      route_end_city = #{routeEndCity,jdbcType=VARCHAR}
+    where route_id = #{routeId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select route_id, route_name, route_carryage_price, route_start_province, route_start_city, 
+    route_middle_proince, route_middle_city, route_end_province, route_end_city
+    from route
+    where route_id = #{routeId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select route_id, route_name, route_carryage_price, route_start_province, route_start_city, 
+    route_middle_proince, route_middle_city, route_end_province, route_end_city
+    from route
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Route">
+    <id column="route_id" jdbcType="VARCHAR" property="routeId" />
+    <result column="route_name" jdbcType="VARCHAR" property="routeName" />
+    <result column="route_carryage_price" jdbcType="DECIMAL" property="routeCarryagePrice" />
+    <result column="route_start_province" jdbcType="VARCHAR" property="routeStartProvince" />
+    <result column="route_start_city" jdbcType="VARCHAR" property="routeStartCity" />
+    <result column="route_middle_proince" jdbcType="VARCHAR" property="routeMiddleProince" />
+    <result column="route_middle_city" jdbcType="VARCHAR" property="routeMiddleCity" />
+    <result column="route_end_province" jdbcType="VARCHAR" property="routeEndProvince" />
+    <result column="route_end_city" jdbcType="VARCHAR" property="routeEndCity" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from route
+    where route_id = #{routeId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Route">
+    insert into route (route_id, route_name, route_carryage_price, 
+      route_start_province, route_start_city, route_middle_proince, 
+      route_middle_city, route_end_province, route_end_city
+      )
+    values (#{routeId,jdbcType=VARCHAR}, #{routeName,jdbcType=VARCHAR}, #{routeCarryagePrice,jdbcType=DECIMAL}, 
+      #{routeStartProvince,jdbcType=VARCHAR}, #{routeStartCity,jdbcType=VARCHAR}, #{routeMiddleProince,jdbcType=VARCHAR}, 
+      #{routeMiddleCity,jdbcType=VARCHAR}, #{routeEndProvince,jdbcType=VARCHAR}, #{routeEndCity,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Route">
+    update route
+    set route_name = #{routeName,jdbcType=VARCHAR},
+      route_carryage_price = #{routeCarryagePrice,jdbcType=DECIMAL},
+      route_start_province = #{routeStartProvince,jdbcType=VARCHAR},
+      route_start_city = #{routeStartCity,jdbcType=VARCHAR},
+      route_middle_proince = #{routeMiddleProince,jdbcType=VARCHAR},
+      route_middle_city = #{routeMiddleCity,jdbcType=VARCHAR},
+      route_end_province = #{routeEndProvince,jdbcType=VARCHAR},
+      route_end_city = #{routeEndCity,jdbcType=VARCHAR}
+    where route_id = #{routeId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select route_id, route_name, route_carryage_price, route_start_province, route_start_city, 
+    route_middle_proince, route_middle_city, route_end_province, route_end_city
+    from route
+    where route_id = #{routeId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select route_id, route_name, route_carryage_price, route_start_province, route_start_city, 
+    route_middle_proince, route_middle_city, route_end_province, route_end_city
+    from route
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Route">
+    <id column="route_id" jdbcType="VARCHAR" property="routeId" />
+    <result column="route_name" jdbcType="VARCHAR" property="routeName" />
+    <result column="route_carryage_price" jdbcType="DECIMAL" property="routeCarryagePrice" />
+    <result column="route_start_province" jdbcType="VARCHAR" property="routeStartProvince" />
+    <result column="route_start_city" jdbcType="VARCHAR" property="routeStartCity" />
+    <result column="route_middle_proince" jdbcType="VARCHAR" property="routeMiddleProince" />
+    <result column="route_middle_city" jdbcType="VARCHAR" property="routeMiddleCity" />
+    <result column="route_end_province" jdbcType="VARCHAR" property="routeEndProvince" />
+    <result column="route_end_city" jdbcType="VARCHAR" property="routeEndCity" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from route
+    where route_id = #{routeId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Route">
+    insert into route (route_id, route_name, route_carryage_price, 
+      route_start_province, route_start_city, route_middle_proince, 
+      route_middle_city, route_end_province, route_end_city
+      )
+    values (#{routeId,jdbcType=VARCHAR}, #{routeName,jdbcType=VARCHAR}, #{routeCarryagePrice,jdbcType=DECIMAL}, 
+      #{routeStartProvince,jdbcType=VARCHAR}, #{routeStartCity,jdbcType=VARCHAR}, #{routeMiddleProince,jdbcType=VARCHAR}, 
+      #{routeMiddleCity,jdbcType=VARCHAR}, #{routeEndProvince,jdbcType=VARCHAR}, #{routeEndCity,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Route">
+    update route
+    set route_name = #{routeName,jdbcType=VARCHAR},
+      route_carryage_price = #{routeCarryagePrice,jdbcType=DECIMAL},
+      route_start_province = #{routeStartProvince,jdbcType=VARCHAR},
+      route_start_city = #{routeStartCity,jdbcType=VARCHAR},
+      route_middle_proince = #{routeMiddleProince,jdbcType=VARCHAR},
+      route_middle_city = #{routeMiddleCity,jdbcType=VARCHAR},
+      route_end_province = #{routeEndProvince,jdbcType=VARCHAR},
+      route_end_city = #{routeEndCity,jdbcType=VARCHAR}
+    where route_id = #{routeId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select route_id, route_name, route_carryage_price, route_start_province, route_start_city, 
+    route_middle_proince, route_middle_city, route_end_province, route_end_city
+    from route
+    where route_id = #{routeId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select route_id, route_name, route_carryage_price, route_start_province, route_start_city, 
+    route_middle_proince, route_middle_city, route_end_province, route_end_city
+    from route
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Route">
+    <id column="route_id" jdbcType="VARCHAR" property="routeId" />
+    <result column="route_name" jdbcType="VARCHAR" property="routeName" />
+    <result column="route_carryage_price" jdbcType="DECIMAL" property="routeCarryagePrice" />
+    <result column="route_start_province" jdbcType="VARCHAR" property="routeStartProvince" />
+    <result column="route_start_city" jdbcType="VARCHAR" property="routeStartCity" />
+    <result column="route_middle_proince" jdbcType="VARCHAR" property="routeMiddleProince" />
+    <result column="route_middle_city" jdbcType="VARCHAR" property="routeMiddleCity" />
+    <result column="route_end_province" jdbcType="VARCHAR" property="routeEndProvince" />
+    <result column="route_end_city" jdbcType="VARCHAR" property="routeEndCity" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from route
+    where route_id = #{routeId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Route">
+    insert into route (route_id, route_name, route_carryage_price, 
+      route_start_province, route_start_city, route_middle_proince, 
+      route_middle_city, route_end_province, route_end_city
+      )
+    values (#{routeId,jdbcType=VARCHAR}, #{routeName,jdbcType=VARCHAR}, #{routeCarryagePrice,jdbcType=DECIMAL}, 
+      #{routeStartProvince,jdbcType=VARCHAR}, #{routeStartCity,jdbcType=VARCHAR}, #{routeMiddleProince,jdbcType=VARCHAR}, 
+      #{routeMiddleCity,jdbcType=VARCHAR}, #{routeEndProvince,jdbcType=VARCHAR}, #{routeEndCity,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Route">
+    update route
+    set route_name = #{routeName,jdbcType=VARCHAR},
+      route_carryage_price = #{routeCarryagePrice,jdbcType=DECIMAL},
+      route_start_province = #{routeStartProvince,jdbcType=VARCHAR},
+      route_start_city = #{routeStartCity,jdbcType=VARCHAR},
+      route_middle_proince = #{routeMiddleProince,jdbcType=VARCHAR},
+      route_middle_city = #{routeMiddleCity,jdbcType=VARCHAR},
+      route_end_province = #{routeEndProvince,jdbcType=VARCHAR},
+      route_end_city = #{routeEndCity,jdbcType=VARCHAR}
+    where route_id = #{routeId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select route_id, route_name, route_carryage_price, route_start_province, route_start_city, 
+    route_middle_proince, route_middle_city, route_end_province, route_end_city
+    from route
+    where route_id = #{routeId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select route_id, route_name, route_carryage_price, route_start_province, route_start_city, 
+    route_middle_proince, route_middle_city, route_end_province, route_end_city
+    from route
+  </select>
+</mapper>

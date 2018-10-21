@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oukele.dao.HandoverMapper">
+  <resultMap id="BaseResultMap" type="com.oukele.model.Handover">
+    <id column="handover_start_city" jdbcType="VARCHAR" property="handoverStartCity" />
+    <result column="handover_end_city" jdbcType="VARCHAR" property="handoverEndCity" />
+    <result column="handover_reached_city" jdbcType="VARCHAR" property="handoverReachedCity" />
+    <result column="handover_state" jdbcType="INTEGER" property="handoverState" />
+    <result column="handover_generator_date" jdbcType="TIMESTAMP" property="handoverGeneratorDate" />
+    <result column="handover_remarks" jdbcType="VARCHAR" property="handoverRemarks" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from handover
+    where handover_start_city = #{handoverStartCity,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Handover">
+    insert into handover (handover_start_city, handover_end_city, 
+      handover_reached_city, handover_state, handover_generator_date, 
+      handover_remarks)
+    values (#{handoverStartCity,jdbcType=VARCHAR}, #{handoverEndCity,jdbcType=VARCHAR}, 
+      #{handoverReachedCity,jdbcType=VARCHAR}, #{handoverState,jdbcType=INTEGER}, #{handoverGeneratorDate,jdbcType=TIMESTAMP}, 
+      #{handoverRemarks,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Handover">
+    update handover
+    set handover_end_city = #{handoverEndCity,jdbcType=VARCHAR},
+      handover_reached_city = #{handoverReachedCity,jdbcType=VARCHAR},
+      handover_state = #{handoverState,jdbcType=INTEGER},
+      handover_generator_date = #{handoverGeneratorDate,jdbcType=TIMESTAMP},
+      handover_remarks = #{handoverRemarks,jdbcType=VARCHAR}
+    where handover_start_city = #{handoverStartCity,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select handover_start_city, handover_end_city, handover_reached_city, handover_state, 
+    handover_generator_date, handover_remarks
+    from handover
+    where handover_start_city = #{handoverStartCity,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select handover_start_city, handover_end_city, handover_reached_city, handover_state, 
+    handover_generator_date, handover_remarks
+    from handover
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Handover">
+    <id column="handover_start_city" jdbcType="VARCHAR" property="handoverStartCity" />
+    <result column="handover_end_city" jdbcType="VARCHAR" property="handoverEndCity" />
+    <result column="handover_reached_city" jdbcType="VARCHAR" property="handoverReachedCity" />
+    <result column="handover_state" jdbcType="INTEGER" property="handoverState" />
+    <result column="handover_generator_date" jdbcType="TIMESTAMP" property="handoverGeneratorDate" />
+    <result column="handover_remarks" jdbcType="VARCHAR" property="handoverRemarks" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from handover
+    where handover_start_city = #{handoverStartCity,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Handover">
+    insert into handover (handover_start_city, handover_end_city, 
+      handover_reached_city, handover_state, handover_generator_date, 
+      handover_remarks)
+    values (#{handoverStartCity,jdbcType=VARCHAR}, #{handoverEndCity,jdbcType=VARCHAR}, 
+      #{handoverReachedCity,jdbcType=VARCHAR}, #{handoverState,jdbcType=INTEGER}, #{handoverGeneratorDate,jdbcType=TIMESTAMP}, 
+      #{handoverRemarks,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Handover">
+    update handover
+    set handover_end_city = #{handoverEndCity,jdbcType=VARCHAR},
+      handover_reached_city = #{handoverReachedCity,jdbcType=VARCHAR},
+      handover_state = #{handoverState,jdbcType=INTEGER},
+      handover_generator_date = #{handoverGeneratorDate,jdbcType=TIMESTAMP},
+      handover_remarks = #{handoverRemarks,jdbcType=VARCHAR}
+    where handover_start_city = #{handoverStartCity,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select handover_start_city, handover_end_city, handover_reached_city, handover_state, 
+    handover_generator_date, handover_remarks
+    from handover
+    where handover_start_city = #{handoverStartCity,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select handover_start_city, handover_end_city, handover_reached_city, handover_state, 
+    handover_generator_date, handover_remarks
+    from handover
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Handover">
+    <id column="handover_start_city" jdbcType="VARCHAR" property="handoverStartCity" />
+    <result column="handover_end_city" jdbcType="VARCHAR" property="handoverEndCity" />
+    <result column="handover_reached_city" jdbcType="VARCHAR" property="handoverReachedCity" />
+    <result column="handover_state" jdbcType="INTEGER" property="handoverState" />
+    <result column="handover_generator_date" jdbcType="TIMESTAMP" property="handoverGeneratorDate" />
+    <result column="handover_remarks" jdbcType="VARCHAR" property="handoverRemarks" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from handover
+    where handover_start_city = #{handoverStartCity,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Handover">
+    insert into handover (handover_start_city, handover_end_city, 
+      handover_reached_city, handover_state, handover_generator_date, 
+      handover_remarks)
+    values (#{handoverStartCity,jdbcType=VARCHAR}, #{handoverEndCity,jdbcType=VARCHAR}, 
+      #{handoverReachedCity,jdbcType=VARCHAR}, #{handoverState,jdbcType=INTEGER}, #{handoverGeneratorDate,jdbcType=TIMESTAMP}, 
+      #{handoverRemarks,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Handover">
+    update handover
+    set handover_end_city = #{handoverEndCity,jdbcType=VARCHAR},
+      handover_reached_city = #{handoverReachedCity,jdbcType=VARCHAR},
+      handover_state = #{handoverState,jdbcType=INTEGER},
+      handover_generator_date = #{handoverGeneratorDate,jdbcType=TIMESTAMP},
+      handover_remarks = #{handoverRemarks,jdbcType=VARCHAR}
+    where handover_start_city = #{handoverStartCity,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select handover_start_city, handover_end_city, handover_reached_city, handover_state, 
+    handover_generator_date, handover_remarks
+    from handover
+    where handover_start_city = #{handoverStartCity,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select handover_start_city, handover_end_city, handover_reached_city, handover_state, 
+    handover_generator_date, handover_remarks
+    from handover
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Handover">
+    <id column="handover_start_city" jdbcType="VARCHAR" property="handoverStartCity" />
+    <result column="handover_end_city" jdbcType="VARCHAR" property="handoverEndCity" />
+    <result column="handover_reached_city" jdbcType="VARCHAR" property="handoverReachedCity" />
+    <result column="handover_state" jdbcType="INTEGER" property="handoverState" />
+    <result column="handover_generator_date" jdbcType="TIMESTAMP" property="handoverGeneratorDate" />
+    <result column="handover_remarks" jdbcType="VARCHAR" property="handoverRemarks" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from handover
+    where handover_start_city = #{handoverStartCity,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Handover">
+    insert into handover (handover_start_city, handover_end_city, 
+      handover_reached_city, handover_state, handover_generator_date, 
+      handover_remarks)
+    values (#{handoverStartCity,jdbcType=VARCHAR}, #{handoverEndCity,jdbcType=VARCHAR}, 
+      #{handoverReachedCity,jdbcType=VARCHAR}, #{handoverState,jdbcType=INTEGER}, #{handoverGeneratorDate,jdbcType=TIMESTAMP}, 
+      #{handoverRemarks,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Handover">
+    update handover
+    set handover_end_city = #{handoverEndCity,jdbcType=VARCHAR},
+      handover_reached_city = #{handoverReachedCity,jdbcType=VARCHAR},
+      handover_state = #{handoverState,jdbcType=INTEGER},
+      handover_generator_date = #{handoverGeneratorDate,jdbcType=TIMESTAMP},
+      handover_remarks = #{handoverRemarks,jdbcType=VARCHAR}
+    where handover_start_city = #{handoverStartCity,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select handover_start_city, handover_end_city, handover_reached_city, handover_state, 
+    handover_generator_date, handover_remarks
+    from handover
+    where handover_start_city = #{handoverStartCity,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select handover_start_city, handover_end_city, handover_reached_city, handover_state, 
+    handover_generator_date, handover_remarks
+    from handover
+  </select>
+</mapper>

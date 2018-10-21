@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oukele.dao.ProvinceMapper">
+  <resultMap id="BaseResultMap" type="com.oukele.model.Province">
+    <id column="province_id" jdbcType="VARCHAR" property="provinceId" />
+    <result column="province_name" jdbcType="VARCHAR" property="provinceName" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from province
+    where province_id = #{provinceId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Province">
+    insert into province (province_id, province_name)
+    values (#{provinceId,jdbcType=VARCHAR}, #{provinceName,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Province">
+    update province
+    set province_name = #{provinceName,jdbcType=VARCHAR}
+    where province_id = #{provinceId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select province_id, province_name
+    from province
+    where province_id = #{provinceId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select province_id, province_name
+    from province
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Province">
+    <id column="province_id" jdbcType="VARCHAR" property="provinceId" />
+    <result column="province_name" jdbcType="VARCHAR" property="provinceName" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from province
+    where province_id = #{provinceId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Province">
+    insert into province (province_id, province_name)
+    values (#{provinceId,jdbcType=VARCHAR}, #{provinceName,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Province">
+    update province
+    set province_name = #{provinceName,jdbcType=VARCHAR}
+    where province_id = #{provinceId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select province_id, province_name
+    from province
+    where province_id = #{provinceId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select province_id, province_name
+    from province
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Province">
+    <id column="province_id" jdbcType="VARCHAR" property="provinceId" />
+    <result column="province_name" jdbcType="VARCHAR" property="provinceName" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from province
+    where province_id = #{provinceId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Province">
+    insert into province (province_id, province_name)
+    values (#{provinceId,jdbcType=VARCHAR}, #{provinceName,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Province">
+    update province
+    set province_name = #{provinceName,jdbcType=VARCHAR}
+    where province_id = #{provinceId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select province_id, province_name
+    from province
+    where province_id = #{provinceId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select province_id, province_name
+    from province
+  </select>
+  <resultMap id="BaseResultMap" type="com.oukele.model.Province">
+    <id column="province_id" jdbcType="VARCHAR" property="provinceId" />
+    <result column="province_name" jdbcType="VARCHAR" property="provinceName" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from province
+    where province_id = #{provinceId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oukele.model.Province">
+    insert into province (province_id, province_name)
+    values (#{provinceId,jdbcType=VARCHAR}, #{provinceName,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.oukele.model.Province">
+    update province
+    set province_name = #{provinceName,jdbcType=VARCHAR}
+    where province_id = #{provinceId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select province_id, province_name
+    from province
+    where province_id = #{provinceId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select province_id, province_name
+    from province
+  </select>
+</mapper>
